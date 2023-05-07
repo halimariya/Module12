@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("https://www.munichre.com/content/dam/munichre/marc/images/connected%20lines-data.png/_jcr_content/renditions/cropped.16_to_9.png./cropped.16_to_9.png");
+            font-family: 'Roboto', sans-serif;
+
+        }
+        .form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 520px;
+            background-color: rgba(255, 255, 255, 0.389);
+            border-radius: 5px;
+            text-align: center;
+            padding: 30px, 30px, 5px , 30px;
+            box-shadow: 0px, 5px, 20px, 10px rgba( 0, 0, 0,0.2);
+
+        }
+        .form header{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .form form{
+            margin: 50px, 0;
+        }
+        form .field{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        form input{
+            height: 50px;
+            width: 80%;
+            outline: none;
+            padding: 0 15px;
+            padding-left: 40px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid rgb(36, 235, 225);
+        }
+        form button {
+            background-color: black;
+            color: rgb(255, 255, 255);
+            width: 50%;
+            font-size: 20px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Part 1: Building the BMI Calculator
+Create an HTML file with a form containing two input fields with IDs of "weightInput" and "heightInput", and a button with an ID of "calculateBtn".
+Using JavaScript, write a function that calculates the Body Mass Index (BMI) of a person when the "calculateBtn" is clicked.
+The BMI formula is: BMI = weight (kg) / (height (m) * height (m)).
+Display the BMI result on the web page.
+     -->
+    <div class="form">
+        <header>BMI Calculator</header>
+        <form action="">
+            <div class="field">
+                <input type="number" class="area" name="" id="weightInput" required placeholder="Enter your Weight in Kg"><br>
+            </div>
+            <div class="field">
+                <input type="number" class="area" name="" id="heightInput" required placeholder="Enter your Height In Cm"><br>
+            </div>
+
+
+            <button onclick="calculateBtn()">Calculate BMI</button>
+
+            <div id="result"></div>
+    </div>
+    </form>
+    <script>
+        function calculateBtn() {
+            var weight = document.getElementById("weightInput").value;
+            var height = document.getElementById("heightInput").value;
+
+            height = height / 100;
+            var bmi = weight / (height * height);
+
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "Your BMI is : " + bmi.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
